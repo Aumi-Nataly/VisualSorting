@@ -15,7 +15,13 @@ namespace LibraryAlgorithm
         /// <summary>
         /// Что нужно отсортировать
         /// </summary>
-        public List<T> ArrayForSort {get;set;}=new List<T>();
+        public List<T> ArrayForSort {get;set;}
+
+
+        public clsSortBase(List<T> _ArrayForSort)
+        {
+            ArrayForSort=_ArrayForSort;
+        }
 
         /// <summary>
         /// Получить результат сортировки.

@@ -33,11 +33,11 @@ namespace VisualSorting
             textBoxDefaultAnswer.Clear();
             textBoxResult.Clear();
 
-            string data=textBoxValue.Text;
+            string data = textBoxValue.Text;
 
             if (!Correct(data))
             {
-                MessageBox.Show("Введены некорректные данные!","Ошибка",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Введены некорректные данные!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -48,14 +48,16 @@ namespace VisualSorting
                 return;
 
 
+            List<int> listQuestion = new List<int>() { 1, 2, 3, 4 };
 
-            clsSortBase<int> clsSort = new clsSortBase<int>();
-            string[] arr= data.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] arr = data.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string str in arr)
             {
-                clsSort.ArrayForSort.Add(Convert.ToInt32(str));
+                listQuestion.Add(Convert.ToInt32(str));
             }
+
+            clsSortBase<int> clsSort = new clsSortBase<int>(listQuestion);
 
             switch (radioBtn.Name)
             {
@@ -77,18 +79,18 @@ namespace VisualSorting
             if (string.IsNullOrEmpty(str))
                 return false;
 
-                int myInt;
+            int myInt;
             string[] nums = str.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string s in nums)
-            { 
-              bool isValid = int.TryParse(s, out myInt);
+            {
+                bool isValid = int.TryParse(s, out myInt);
 
                 if (!isValid)
                     return false;
             }
-            
-            return true; 
+
+            return true;
         }
     }
 }

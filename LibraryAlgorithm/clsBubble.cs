@@ -9,13 +9,16 @@ namespace LibraryAlgorithm
     /// <summary>
     /// Осртировка пузырьком
     /// </summary>
-    public class clsBubble<T>:clsSortBase<T>
+    public class clsBubble<T> : clsSortBase<T>
     {
+
+        public clsBubble(List<T> _ArrayForSort) : base(_ArrayForSort)
+        {
+        }
 
         public override void StartSort()
         {
-            //base.StartSort();
+            base.StartSort();
         }
-
     }
 }

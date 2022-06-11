@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="clsBubble.cs" />
     <Compile Include="clsSortBase.cs" />
-    <Compile Include="clsStringOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

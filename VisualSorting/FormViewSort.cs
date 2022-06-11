@@ -30,42 +30,41 @@ namespace VisualSorting
         /// <param name="e"></param>
         private void buttonGo_Click(object sender, EventArgs e)
         {
-            textBoxDefaultAnswer.Clear();
-            textBoxResult.Clear();
-
-            string data = textBoxValue.Text;
-
-            if (!Correct(data))
+            try
             {
-                MessageBox.Show("Введены некорректные данные!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                textBoxDefaultAnswer.Clear();
+                textBoxResult.Clear();
+
+                string data = textBoxValue.Text;
+
+              
+                RadioButton radioBtn = this.groupBox1.Controls.OfType<RadioButton>()
+                                           .Where(x => x.Checked).FirstOrDefault();
+
+                if (radioBtn == null)
+                    throw new Exception("Не указан тип сортировки");
+
+
+                List<int> listQuestion = Correct(data);
+
+                clsSortBase<int> clsSort = new clsSortBase<int>(listQuestion);
+                clsBubble<int> clsSortBubble = new clsBubble<int>(listQuestion);
+
+
+
+                switch (radioBtn.Name)
+                {
+                    case "radioButtonBubble":
+                        textBoxDefaultAnswer.Text = clsSort.StartSort();
+                        textBoxResult.Text = clsSortBubble.StartSort();
+
+                        break;
+                }
             }
-
-            RadioButton radioBtn = this.groupBox1.Controls.OfType<RadioButton>()
-                                       .Where(x => x.Checked).FirstOrDefault();
-
-            if (radioBtn == null)
-                return;
-
-
-            List<int> listQuestion = new List<int>() { 1, 2, 3, 4 };
-
-            string[] arr = data.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-            foreach (string str in arr)
+            catch (Exception ex)
             {
-                listQuestion.Add(Convert.ToInt32(str));
-            }
-
-            clsSortBase<int> clsSort = new clsSortBase<int>(listQuestion);
-
-            switch (radioBtn.Name)
-            {
-                case "radioButtonBubble":
-                    clsSort.StartSort();
-                    textBoxDefaultAnswer.Text = new clsStringOutput<int>().OneStr(clsSort.ArrayForSort);
-
-                    break;
+                frmError frm = frmError.InstFrm(ex);
+                frm.Show();
             }
 
         }
@@ -74,23 +73,43 @@ namespace VisualSorting
         /// Проверить введенны данные
         /// </summary>
         /// <returns></returns>
-        private bool Correct(string str)
+        private List<int> Correct(string str)
         {
-            if (string.IsNullOrEmpty(str))
-                return false;
-
-            int myInt;
-            string[] nums = str.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-
-            foreach (string s in nums)
+            try
             {
-                bool isValid = int.TryParse(s, out myInt);
+                if (string.IsNullOrEmpty(str))
+                    throw new Exception("Введена пустая строка!");
 
-                if (!isValid)
-                    return false;
+                List<int> listQuestion = new List<int>();
+                int myInt;
+
+                string[] nums = str.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+
+                foreach (string s in nums)
+                {
+                    bool isValid = int.TryParse(s, out myInt);
+
+                    if (!isValid)
+                        throw new Exception("Введены некорректные данные!");
+
+                    listQuestion.Add(myInt);
+                }
+
+                return listQuestion;
             }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
-            return true;
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            textBoxDefaultAnswer.Clear();
+            textBoxResult.Clear();
+            textBoxValue.Clear();
+            listBoxResult.Items.Clear();
         }
     }
 }

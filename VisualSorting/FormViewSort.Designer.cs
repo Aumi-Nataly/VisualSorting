@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxDefaultAnswer = new System.Windows.Forms.TextBox();
             this.listBoxResult = new System.Windows.Forms.ListBox();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -109,6 +110,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.splitContainer1.Panel1.Controls.Add(this.buttonClear);
             this.splitContainer1.Panel1.Controls.Add(this.buttonGo);
             this.splitContainer1.Panel1.Controls.Add(this.textBoxResult);
             this.splitContainer1.Panel1.Controls.Add(this.label3);
@@ -172,6 +174,17 @@
             this.listBoxResult.Size = new System.Drawing.Size(302, 212);
             this.listBoxResult.TabIndex = 0;
             // 
+            // buttonClear
+            // 
+            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonClear.Location = new System.Drawing.Point(486, 5);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(76, 32);
+            this.buttonClear.TabIndex = 8;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // FormViewSort
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +192,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
             this.Name = "FormViewSort";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Визуализация алгоритмов сортировок";
             this.Load += new System.EventHandler(this.FormViewSort_Load);
             this.groupBox1.ResumeLayout(false);
@@ -205,6 +219,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListBox listBoxResult;
         private System.Windows.Forms.Button buttonGo;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
 

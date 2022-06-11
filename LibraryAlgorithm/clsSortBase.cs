@@ -9,30 +9,39 @@ namespace LibraryAlgorithm
     /// <summary>
     /// Родительский класс для сортировок
     /// </summary>
-    public class clsSortBase<T>
+    public class clsSortBase<T> where T : IComparable
     {
 
         /// <summary>
         /// Что нужно отсортировать
         /// </summary>
-        public List<T> ArrayForSort {get;set;}
+        protected List<T> ArrayForSort {get;set;}
 
+        /// <summary>
+        /// Пошаговая сортировка
+        /// </summary>
+        public List<string> ArrayStep { get; set; } = new List<string>(); 
 
         public clsSortBase(List<T> _ArrayForSort)
-        {
-            ArrayForSort=_ArrayForSort;
+        {        
+            if (_ArrayForSort==null)
+            {
+                throw new ArgumentNullException(nameof(_ArrayForSort));
+            }
+
+            ArrayForSort =_ArrayForSort;
         }
 
         /// <summary>
         /// Получить результат сортировки.
         /// По умолчанию - сортировка из коробки
         /// </summary>
-        public virtual void StartSort()
+        public virtual string StartSort()
         {
             ArrayForSort.Sort();
+            return String.Join(" ", ArrayForSort);
         }
 
-  
         
     }
 }

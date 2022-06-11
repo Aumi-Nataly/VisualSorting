@@ -14,46 +14,26 @@ namespace LibraryAlgorithm.Tests
         [TestMethod()]
         public void StartSortBaseTest()
         {
-            List<int> listAnswer = new List<int>() { 1,2,3,4 };
-            listAnswer.Add(4);
-            listAnswer.Add(1);
-            listAnswer.Add(3);
-            listAnswer.Add(2);
+            string a = "1 2 3 4";
+            List<int> listAnswer = new List<int>() { 4,1,3,2 };
+           
 
             clsSortBase<int> sort = new clsSortBase<int>(listAnswer);
 
-
-            sort.StartSort();
-
-            //Сравнить по элементу
-            for (int i = 0; i < listAnswer.Count; i++)
-            {
-                Assert.AreEqual(listAnswer[i], sort.ArrayForSort[i]);
-            }
-        
+            string result= sort.StartSort();
+            Assert.AreEqual(a, result);
         }
 
         [TestMethod()]
         public void StartSortBubbleTest()
         {
-            //List<int> listAnswer = new List<int>() { 1, 2, 3, 4 };
+            string a = "1 2 3 4";
+            List<int> listAnswer = new List<int>() { 4, 1, 3, 2 };
 
-            //clsSortBase<int> sort = new clsBubble<int>();
+            clsBubble<int> sort = new clsBubble<int>(listAnswer);
 
-            ////clsSortBase<int> sort = new clsSortBase<int>();
-            //sort.ArrayForSort.Add(4);
-            //sort.ArrayForSort.Add(1);
-            //sort.ArrayForSort.Add(3);
-            //sort.ArrayForSort.Add(2);
-
-
-            //sort.StartSort();
-
-            ////Сравнить по элементу
-            //for (int i = 0; i < listAnswer.Count; i++)
-            //{
-            //    Assert.AreEqual(listAnswer[i], sort.ArrayForSort[i]);
-            //}
+            string result = sort.StartSort();
+            Assert.AreEqual(a, result);
 
         }
     }

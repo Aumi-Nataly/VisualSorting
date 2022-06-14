@@ -79,6 +79,9 @@ namespace VisualSorting
                 listBoxResult.Items.Add(s);
 
             dataGridViewResult.DataSource= tab;
+
+            dataGridViewResult.Columns["index0"].Visible = false;
+            dataGridViewResult.Columns["index1"].Visible = false;
         }
 
         /// <summary>
@@ -126,7 +129,44 @@ namespace VisualSorting
 
         private void dataGridViewResult_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-         // if(dataGridViewResult.Rows(e.RowIndex).Cells("LevelID").Value.ToString() = "0" )
+            
+          //  dataGridViewResult.Rows[1].Cells[1].Style.BackColor = Color.Yellow;
+
+            try
+            {
+
+                if (e.Value == null) return;
+   
+               string index0=  dataGridViewResult.Rows[e.RowIndex].Cells["index0"].Value.ToString();
+               string index1 = dataGridViewResult.Rows[e.RowIndex].Cells["index1"].Value.ToString();
+
+
+                // int ind0 = Convert.ToInt32(dataGridViewResult[e.ColumnIndex, e.RowIndex].Value);
+
+                bool nameCol0 = dataGridViewResult.Columns[e.ColumnIndex].Name.Equals(index0);
+                bool nameCol1 = dataGridViewResult.Columns[e.ColumnIndex].Name.Equals(index1);
+
+
+                if (nameCol0)
+                {
+                    e.CellStyle.BackColor = Color.Yellow;
+                }
+               
+                if (nameCol1)
+                {
+                    e.CellStyle.BackColor = Color.YellowGreen;
+                }
+
+
+                //   dataGridViewResult[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Yellow;
+
+
+            }
+            catch (Exception ex)
+            {
+                frmError frm = frmError.InstFrm(ex);
+                frm.Show();
+            }
         }
     }
 }

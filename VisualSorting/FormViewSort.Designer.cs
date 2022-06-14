@@ -38,14 +38,19 @@
             this.buttonGo = new System.Windows.Forms.Button();
             this.textBoxResult = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.listBoxResult = new System.Windows.Forms.ListBox();
             this.dataGridViewResult = new System.Windows.Forms.DataGridView();
+            this.listBoxResult = new System.Windows.Forms.ListBox();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxValue
@@ -122,8 +127,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridViewResult);
-            this.splitContainer1.Panel2.Controls.Add(this.listBoxResult);
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.TabIndex = 4;
@@ -168,24 +172,44 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Результат указанной сортировки:";
             // 
-            // listBoxResult
-            // 
-            this.listBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listBoxResult.FormattingEnabled = true;
-            this.listBoxResult.ItemHeight = 24;
-            this.listBoxResult.Location = new System.Drawing.Point(24, 21);
-            this.listBoxResult.Name = "listBoxResult";
-            this.listBoxResult.Size = new System.Drawing.Size(302, 196);
-            this.listBoxResult.TabIndex = 0;
-            // 
             // dataGridViewResult
             // 
             this.dataGridViewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewResult.Location = new System.Drawing.Point(349, 21);
+            this.dataGridViewResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewResult.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewResult.Name = "dataGridViewResult";
-            this.dataGridViewResult.Size = new System.Drawing.Size(439, 196);
+            this.dataGridViewResult.Size = new System.Drawing.Size(562, 246);
             this.dataGridViewResult.TabIndex = 1;
             this.dataGridViewResult.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewResult_CellFormatting);
+            // 
+            // listBoxResult
+            // 
+            this.listBoxResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBoxResult.FormattingEnabled = true;
+            this.listBoxResult.ItemHeight = 24;
+            this.listBoxResult.Location = new System.Drawing.Point(0, 0);
+            this.listBoxResult.Name = "listBoxResult";
+            this.listBoxResult.Size = new System.Drawing.Size(234, 246);
+            this.listBoxResult.TabIndex = 0;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.listBoxResult);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.dataGridViewResult);
+            this.splitContainer2.Panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.splitContainer2.Size = new System.Drawing.Size(800, 246);
+            this.splitContainer2.SplitterDistance = 234;
+            this.splitContainer2.TabIndex = 2;
             // 
             // FormViewSort
             // 
@@ -205,6 +229,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -223,6 +251,7 @@
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.RadioButton radioButtonCocktail;
         private System.Windows.Forms.DataGridView dataGridViewResult;
+        private System.Windows.Forms.SplitContainer splitContainer2;
     }
 }
 

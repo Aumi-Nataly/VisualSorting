@@ -34,12 +34,13 @@
             this.radioButtonBubble = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.buttonGo = new System.Windows.Forms.Button();
             this.textBoxResult = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxDefaultAnswer = new System.Windows.Forms.TextBox();
             this.listBoxResult = new System.Windows.Forms.ListBox();
-            this.buttonClear = new System.Windows.Forms.Button();
+            this.radioButtonCocktail = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -68,6 +69,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightCyan;
+            this.groupBox1.Controls.Add(this.radioButtonCocktail);
             this.groupBox1.Controls.Add(this.radioButtonBubble);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -86,7 +88,6 @@
             this.radioButtonBubble.Name = "radioButtonBubble";
             this.radioButtonBubble.Size = new System.Drawing.Size(179, 21);
             this.radioButtonBubble.TabIndex = 0;
-            this.radioButtonBubble.TabStop = true;
             this.radioButtonBubble.Text = "Сортировка пузырьком";
             this.radioButtonBubble.UseVisualStyleBackColor = true;
             // 
@@ -126,6 +127,17 @@
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 200;
             this.splitContainer1.TabIndex = 4;
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonClear.Location = new System.Drawing.Point(486, 5);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(76, 32);
+            this.buttonClear.TabIndex = 8;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonGo
             // 
@@ -174,16 +186,15 @@
             this.listBoxResult.Size = new System.Drawing.Size(302, 212);
             this.listBoxResult.TabIndex = 0;
             // 
-            // buttonClear
+            // radioButtonCocktail
             // 
-            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonClear.Location = new System.Drawing.Point(486, 5);
-            this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(76, 32);
-            this.buttonClear.TabIndex = 8;
-            this.buttonClear.Text = "Clear";
-            this.buttonClear.UseVisualStyleBackColor = true;
-            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            this.radioButtonCocktail.AutoSize = true;
+            this.radioButtonCocktail.Location = new System.Drawing.Point(6, 62);
+            this.radioButtonCocktail.Name = "radioButtonCocktail";
+            this.radioButtonCocktail.Size = new System.Drawing.Size(180, 21);
+            this.radioButtonCocktail.TabIndex = 1;
+            this.radioButtonCocktail.Text = "Шейкерная сортировка";
+            this.radioButtonCocktail.UseVisualStyleBackColor = true;
             // 
             // FormViewSort
             // 
@@ -220,6 +231,7 @@
         private System.Windows.Forms.ListBox listBoxResult;
         private System.Windows.Forms.Button buttonGo;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.RadioButton radioButtonCocktail;
     }
 }
 

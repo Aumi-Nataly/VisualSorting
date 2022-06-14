@@ -48,16 +48,23 @@ namespace VisualSorting
                 List<int> listQuestion = Correct(data);
 
                 clsSortBase<int> clsSort = new clsSortBase<int>(listQuestion);
-                clsBubble<int> clsSortBubble = new clsBubble<int>(listQuestion);
+                
 
 
 
                 switch (radioBtn.Name)
                 {
                     case "radioButtonBubble":
+                        clsBubble<int> clsSortBubble = new clsBubble<int>(listQuestion);
                         textBoxDefaultAnswer.Text = clsSort.StartSort();
                         textBoxResult.Text = clsSortBubble.StartSort();
 
+                        break;
+
+                    case "radioButtonCocktail":
+                        clsCocktail<int> clsSortCocktail = new clsCocktail<int>(listQuestion);
+                        textBoxDefaultAnswer.Text = clsSort.StartSort();
+                        textBoxResult.Text = clsSortCocktail.StartSort();
                         break;
                 }
             }

@@ -36,5 +36,18 @@ namespace LibraryAlgorithm.Tests
             Assert.AreEqual(a, result);
 
         }
+
+        [TestMethod()]
+        public void StartSortCocktailTest()
+        {
+            string a = "1 2 3 4";
+            List<int> listAnswer = new List<int>() { 4, 1, 3, 2 };
+
+            clsCocktail<int> sort = new clsCocktail<int>(listAnswer);
+
+            string result = sort.StartSort();
+            Assert.AreEqual(a, result);
+
+        }
     }
 }

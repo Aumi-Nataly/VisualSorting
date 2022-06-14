@@ -42,6 +42,23 @@ namespace LibraryAlgorithm
             return String.Join(" ", ArrayForSort);
         }
 
-        
+
+        /// <summary>
+        /// Поменять местами элементы
+        /// </summary>
+        /// <param name="indexA">индекс 1-ого элемента</param>
+        /// <param name="indexB">индекс 2-ого элемента</param>
+        public void Swap(int indexA, int indexB)
+        {
+
+            if (ArrayForSort[indexA].CompareTo(ArrayForSort[indexB]) == 1)
+            {
+                var tmp = ArrayForSort[indexA];
+                ArrayForSort[indexA] = ArrayForSort[indexB];
+                ArrayForSort[indexB] = tmp;
+            }
+
+        }
+
     }
 }

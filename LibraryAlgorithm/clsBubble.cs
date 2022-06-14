@@ -18,7 +18,9 @@ namespace LibraryAlgorithm
 
 
         public override string StartSort()
-        {  
+        {
+            StepAdd();
+            StepAddTable(-1, -1);
             BubbleSort();
             return String.Join(" ", ArrayForSort);
         }
@@ -33,6 +35,7 @@ namespace LibraryAlgorithm
                 for (int i = 0; i < ArrayForSort.Count - 1 - a; i++)
                 {
                     Swap(i, i + 1);
+                   
                 }
             }
         

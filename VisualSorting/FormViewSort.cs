@@ -32,7 +32,7 @@ namespace VisualSorting
         {
             try
             {
-                textBoxDefaultAnswer.Clear();
+                listBoxResult.Items.Clear();
                 textBoxResult.Clear();
 
                 string data = textBoxValue.Text;
@@ -47,24 +47,21 @@ namespace VisualSorting
 
                 List<int> listQuestion = Correct(data);
 
-                clsSortBase<int> clsSort = new clsSortBase<int>(listQuestion);
-                
-
-
-
+            
                 switch (radioBtn.Name)
                 {
                     case "radioButtonBubble":
                         clsBubble<int> clsSortBubble = new clsBubble<int>(listQuestion);
-                        textBoxDefaultAnswer.Text = clsSort.StartSort();
+                     
                         textBoxResult.Text = clsSortBubble.StartSort();
-
+                        Stepping(clsSortBubble.ArrayStep, clsSortBubble.tableStep);
                         break;
 
                     case "radioButtonCocktail":
                         clsCocktail<int> clsSortCocktail = new clsCocktail<int>(listQuestion);
-                        textBoxDefaultAnswer.Text = clsSort.StartSort();
+                 
                         textBoxResult.Text = clsSortCocktail.StartSort();
+                        Stepping(clsSortCocktail.ArrayStep, clsSortCocktail.tableStep);
                         break;
                 }
             }
@@ -74,6 +71,14 @@ namespace VisualSorting
                 frm.Show();
             }
 
+        }
+
+        private void Stepping(List<string> strings, DataTable tab)
+        { 
+            foreach (string s in strings)
+                listBoxResult.Items.Add(s);
+
+            dataGridViewResult.DataSource= tab;
         }
 
         /// <summary>
@@ -113,10 +118,15 @@ namespace VisualSorting
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-            textBoxDefaultAnswer.Clear();
+           
             textBoxResult.Clear();
             textBoxValue.Clear();
             listBoxResult.Items.Clear();
+        }
+
+        private void dataGridViewResult_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+         // if(dataGridViewResult.Rows(e.RowIndex).Cells("LevelID").Value.ToString() = "0" )
         }
     }
 }

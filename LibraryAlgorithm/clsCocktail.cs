@@ -18,6 +18,8 @@ namespace LibraryAlgorithm
 
         public override string StartSort()
         {
+            StepAdd();
+            StepAddTable(-1, -1);
             CocktailSort();
             return String.Join(" ", ArrayForSort);
         }
@@ -31,10 +33,10 @@ namespace LibraryAlgorithm
 
             while (left < right)
             {
-                GoRight(left, right);
+                GoRight(left, right);               
                 right--;
 
-                GoLeft(right, left);
+                GoLeft(right, left);            
                 left++;
             }
 

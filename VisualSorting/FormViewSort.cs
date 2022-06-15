@@ -165,5 +165,39 @@ namespace VisualSorting
                 frm.Show();
             }
         }
+
+        private void buttonrandom_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+
+            textBoxResult.Clear();
+            textBoxValue.Clear();
+            listBoxResult.Items.Clear();
+
+            string res="";
+
+            for (int i = 0; i < 10; i++)
+            {
+                int randomNumber = rnd.Next(0, 99);
+                res += " " + randomNumber.ToString();
+            }
+
+            textBoxValue.Text = res;
+        }
+
+        private void radioButtonBubble_CheckedChanged(object sender, EventArgs e)
+        {
+            richTextBoxInstruction.Text = "Алгоритм состоит в повторяющихся проходах по сортируемому массиву. На каждой итерации последовательно сравниваются соседние элементы, и, если порядок в паре неверный, то элементы меняют местами.";
+        }
+
+        private void radioButtonCocktail_CheckedChanged(object sender, EventArgs e)
+        {
+            richTextBoxInstruction.Text = "Разновидность пузырьковой сортировки, сортирующая массив в двух направлениях на каждой итерации.";
+        }
+
+        private void radioButtonInsert_CheckedChanged(object sender, EventArgs e)
+        {
+            richTextBoxInstruction.Text = "Алгоритм сортировки, в котором элементы входной последовательности просматриваются по одному, и каждый новый поступивший элемент размещается в подходящее место среди ранее упорядоченных элементов";
+        }
     }
 }

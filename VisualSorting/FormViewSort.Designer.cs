@@ -38,19 +38,20 @@
             this.buttonGo = new System.Windows.Forms.Button();
             this.textBoxResult = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridViewResult = new System.Windows.Forms.DataGridView();
-            this.listBoxResult = new System.Windows.Forms.ListBox();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.listBoxResult = new System.Windows.Forms.ListBox();
+            this.dataGridViewResult = new System.Windows.Forms.DataGridView();
+            this.radioButtonInsert = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxValue
@@ -74,6 +75,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.LightCyan;
+            this.groupBox1.Controls.Add(this.radioButtonInsert);
             this.groupBox1.Controls.Add(this.radioButtonCocktail);
             this.groupBox1.Controls.Add(this.radioButtonBubble);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -172,27 +174,6 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Результат указанной сортировки:";
             // 
-            // dataGridViewResult
-            // 
-            this.dataGridViewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewResult.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewResult.Name = "dataGridViewResult";
-            this.dataGridViewResult.Size = new System.Drawing.Size(562, 246);
-            this.dataGridViewResult.TabIndex = 1;
-            this.dataGridViewResult.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewResult_CellFormatting);
-            // 
-            // listBoxResult
-            // 
-            this.listBoxResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.listBoxResult.FormattingEnabled = true;
-            this.listBoxResult.ItemHeight = 24;
-            this.listBoxResult.Location = new System.Drawing.Point(0, 0);
-            this.listBoxResult.Name = "listBoxResult";
-            this.listBoxResult.Size = new System.Drawing.Size(234, 246);
-            this.listBoxResult.TabIndex = 0;
-            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -211,6 +192,37 @@
             this.splitContainer2.SplitterDistance = 234;
             this.splitContainer2.TabIndex = 2;
             // 
+            // listBoxResult
+            // 
+            this.listBoxResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBoxResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBoxResult.FormattingEnabled = true;
+            this.listBoxResult.ItemHeight = 24;
+            this.listBoxResult.Location = new System.Drawing.Point(0, 0);
+            this.listBoxResult.Name = "listBoxResult";
+            this.listBoxResult.Size = new System.Drawing.Size(234, 246);
+            this.listBoxResult.TabIndex = 0;
+            // 
+            // dataGridViewResult
+            // 
+            this.dataGridViewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewResult.Location = new System.Drawing.Point(0, 0);
+            this.dataGridViewResult.Name = "dataGridViewResult";
+            this.dataGridViewResult.Size = new System.Drawing.Size(562, 246);
+            this.dataGridViewResult.TabIndex = 1;
+            this.dataGridViewResult.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridViewResult_CellFormatting);
+            // 
+            // radioButtonInsert
+            // 
+            this.radioButtonInsert.AutoSize = true;
+            this.radioButtonInsert.Location = new System.Drawing.Point(6, 89);
+            this.radioButtonInsert.Name = "radioButtonInsert";
+            this.radioButtonInsert.Size = new System.Drawing.Size(167, 21);
+            this.radioButtonInsert.TabIndex = 2;
+            this.radioButtonInsert.Text = "Сортировка вставкой";
+            this.radioButtonInsert.UseVisualStyleBackColor = true;
+            // 
             // FormViewSort
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,11 +240,11 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewResult)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -252,6 +264,7 @@
         private System.Windows.Forms.RadioButton radioButtonCocktail;
         private System.Windows.Forms.DataGridView dataGridViewResult;
         private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.RadioButton radioButtonInsert;
     }
 }
 

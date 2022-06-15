@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="clsBubble.cs" />
     <Compile Include="clsCocktail.cs" />
+    <Compile Include="clsInsert.cs" />
     <Compile Include="clsSortBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

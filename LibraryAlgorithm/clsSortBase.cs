@@ -77,7 +77,7 @@ namespace LibraryAlgorithm
                 ArrayForSort[indexB] = tmp;
 
                 StepAdd();
-              //  StepAddTable(indexA, indexB);
+            
             }
             StepAddTable(indexA, indexB);
         }

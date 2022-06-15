@@ -49,5 +49,18 @@ namespace LibraryAlgorithm.Tests
             Assert.AreEqual(a, result);
 
         }
+
+        [TestMethod()]
+        public void StartSortInsertTest()
+        {
+            string a = "1 2 3 4";
+            List<int> listAnswer = new List<int>() { 4, 1, 3, 2 };
+
+            clsInsert<int> sort = new clsInsert<int>(listAnswer);
+
+            string result = sort.StartSort();
+            Assert.AreEqual(a, result);
+
+        }
     }
 }

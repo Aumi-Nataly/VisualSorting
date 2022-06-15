@@ -63,6 +63,12 @@ namespace VisualSorting
                         textBoxResult.Text = clsSortCocktail.StartSort();
                         Stepping(clsSortCocktail.ArrayStep, clsSortCocktail.tableStep);
                         break;
+                    case "radioButtonInsert":
+                        clsInsert<int> clsSortIns = new clsInsert<int>(listQuestion);
+
+                        textBoxResult.Text = clsSortIns.StartSort();
+                        Stepping(clsSortIns.ArrayStep, clsSortIns.tableStep);
+                        break;
                 }
             }
             catch (Exception ex)
@@ -130,7 +136,7 @@ namespace VisualSorting
         private void dataGridViewResult_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             
-          //  dataGridViewResult.Rows[1].Cells[1].Style.BackColor = Color.Yellow;
+     
 
             try
             {
@@ -141,25 +147,16 @@ namespace VisualSorting
                string index1 = dataGridViewResult.Rows[e.RowIndex].Cells["index1"].Value.ToString();
 
 
-                // int ind0 = Convert.ToInt32(dataGridViewResult[e.ColumnIndex, e.RowIndex].Value);
-
                 bool nameCol0 = dataGridViewResult.Columns[e.ColumnIndex].Name.Equals(index0);
                 bool nameCol1 = dataGridViewResult.Columns[e.ColumnIndex].Name.Equals(index1);
 
 
-                if (nameCol0)
+                if (nameCol0 || nameCol1)
                 {
                     e.CellStyle.BackColor = Color.Yellow;
                 }
                
-                if (nameCol1)
-                {
-                    e.CellStyle.BackColor = Color.YellowGreen;
-                }
-
-
-                //   dataGridViewResult[e.ColumnIndex, e.RowIndex].Style.BackColor = Color.Yellow;
-
+                
 
             }
             catch (Exception ex)
